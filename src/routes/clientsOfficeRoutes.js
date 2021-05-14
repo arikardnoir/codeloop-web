@@ -10,20 +10,15 @@ import ClientResetPassword from '@/views/ClientOffice/Auth/ClientResetPassword'
 // Dashboard
 import Dashboard from '@/views/ClientOffice/Dashboard/Dashboard'
 
-// Products
-import RegistProducts from '@/views/ClientOffice/Products/RegistProducts'
-import ListProducts from '@/views/ClientOffice/Products/ListProducts'
-import EditProducts from '@/views/ClientOffice/Products/EditProducts'
+// Students
+import RegistStudents from '@/views/ClientOffice/Students/RegistStudents'
+import ListStudents from '@/views/ClientOffice/Students/ListStudents'
+import EditStudents from '@/views/ClientOffice/Students/EditStudents'
 
 // Users
 import RegistUsers from '@/views/ClientOffice/Users/RegistUsers'
 import ListUsers from '@/views/ClientOffice/Users/ListUsers'
 import EditUsers from '@/views/ClientOffice/Users/EditUsers'
-
-// Providers
-import RegistProviders from '@/views/ClientOffice/Providers/RegistProviders'
-import ListProviders from '@/views/ClientOffice/Providers/ListProviders'
-import EditProviders from '@/views/ClientOffice/Providers/EditProviders'
 
 // Auth routes
 const Auth = [{
@@ -55,33 +50,33 @@ const Auth = [{
 }
 ]
 
-// Products routes
-const Products = [{
-  path: '/products',
-  name: 'ListProducts',
+// Students routes
+const Students = [{
+  path: '/students',
+  name: 'ListStudents',
   component: View,
   children: [{
     path: '/',
-    name: 'ListProducts',
-    component: ListProducts,
+    name: 'ListStudents',
+    component: ListStudents,
     meta: {
-      title: 'Listar Produtos'
+      title: 'Listar Alunos'
     }
   },
   {
     path: 'regist',
-    name: 'RegistProducts',
-    component: RegistProducts,
+    name: 'RegistStudents',
+    component: RegistStudents,
     meta: {
-      title: 'Registar Produtos'
+      title: 'Registar Aluno'
     }
   },
   {
     path: 'edit/:id',
-    name: 'EditProducts',
-    component: EditProducts,
+    name: 'EditStudents',
+    component: EditStudents,
     meta: {
-      title: 'Editar Produtos'
+      title: 'Editar Aluno'
     },
     props: true
   }
@@ -90,7 +85,7 @@ const Products = [{
 
 // Users routes
 const Users = [{
-  path: '/buyers',
+  path: '/users',
   name: 'ListUsers',
   component: View,
   children: [{
@@ -98,7 +93,7 @@ const Users = [{
     name: 'ListUsers',
     component: ListUsers,
     meta: {
-      title: 'Listar Compradores'
+      title: 'Listar Usuarios'
     }
   },
   {
@@ -106,7 +101,7 @@ const Users = [{
     name: 'RegistUsers',
     component: RegistUsers,
     meta: {
-      title: 'Registar Comprador'
+      title: 'Registar Usuarios'
     }
   },
   {
@@ -114,40 +109,7 @@ const Users = [{
     name: 'EditUsers',
     component: EditUsers,
     meta: {
-      title: 'Editar Comprador'
-    },
-    props: true
-  }
-  ]
-}]
-
-// Providers routes
-const Providers = [{
-  path: '/providers',
-  name: 'ListProviders',
-  component: View,
-  children: [{
-    path: '/',
-    name: 'ListProviders',
-    component: ListProviders,
-    meta: {
-      title: 'Listar Fornecedores'
-    }
-  },
-  {
-    path: 'regist',
-    name: 'RegistProviders',
-    component: RegistProviders,
-    meta: {
-      title: 'Registar Fornecedores'
-    }
-  },
-  {
-    path: 'edit/:id',
-    name: 'EditProviders',
-    component: EditProviders,
-    meta: {
-      title: 'Editar Fornecedores'
+      title: 'Editar Usuarios'
     },
     props: true
   }
@@ -171,9 +133,8 @@ const Client = [{
       title: 'Dashboard'
     }
   },
-  ...Products,
-  ...Users,
-  ...Providers
+  ...Students,
+  ...Users
   ]
 }]
 

@@ -3,7 +3,7 @@
     <div class="container-lg">
       <div class="box-login">
         <div class="box-login-header">
-          <span>Login do Cliente</span>
+          <span>Login</span>
         </div>
         <div class="row errors">
           <div class="alert alert-danger col-md-11" v-if="hadError" role="alert">{{hadError}}</div>

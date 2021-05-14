@@ -10,9 +10,8 @@
           <span>{{ merchantName }}</span>
       </div>
       <router-link class="sidenav__list-item" :to="{name: 'Dashboard'}" tag="li"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></router-link>
-      <router-link class="sidenav__list-item" :to="{name: 'ListProducts'}" tag="li" ><i class="fas fa-pen-fancy"></i><span>Produtos</span></router-link>
+      <router-link class="sidenav__list-item" :to="{name: 'ListStudents'}" tag="li" ><i class="fas fa-pen-fancy"></i><span>Alunos</span></router-link>
       <router-link class="sidenav__list-item" :to="{name: 'RegistUsers'}" tag="li" v-if="isAdmin"><i class="fas fa-user"></i><span>Compraddor</span></router-link>
-      <router-link class="sidenav__list-item" :to="{name: 'RegistProviders'}" tag="li" v-if="isAdmin"><i class="fas fa-user"></i><span>Fornecedores</span></router-link>
       <li class="sidenav__list-item sidenav__out" @click="DoLogout"><i class="fas fa-sign-out-alt" aria-hidden="true"></i><span>Sair</span></li>
     </ul>
   </aside>

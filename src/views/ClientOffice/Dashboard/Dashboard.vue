@@ -15,21 +15,7 @@
       <router-link :to="{name: ''}" tag="div" class="overviewcard">
         <div class="overviewcard__status"></div>
         <div class="overviewcard__describe">
-          <div class="overviewcard__icon">Produtos</div>
-          <div class="overviewcard__info">10000</div>
-        </div>
-      </router-link>
-      <router-link :to="{name: ''}" tag="div" class="overviewcard">
-        <div class="overviewcard__status"></div>
-        <div class="overviewcard__describe">
-          <div class="overviewcard__icon">Fornecedores</div>
-          <div class="overviewcard__info">125</div>
-        </div>
-      </router-link>
-      <router-link :to="{name: ''}" tag="div" class="overviewcard">
-        <div class="overviewcard__status"></div>
-        <div class="overviewcard__describe">
-          <div class="overviewcard__icon">Operadores</div>
+          <div class="overviewcard__icon">Alunos</div>
           <div class="overviewcard__info">12</div>
         </div>
       </router-link>
@@ -39,9 +25,7 @@
 <script>
 export default {
   components: {},
-  data () {
-    return {}
-  },
+  data () {},
   methods: {},
   created () {}
 }

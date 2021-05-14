@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="main-header">
-      <div class="main-header__heading">Produtos</div>
+      <div class="main-header__heading">Alunos</div>
       <div class="col col-9">
-          <router-link :to="{name: 'RegistProducts'}" tag="span">
-                <button class="btn btn-primary">Novo Produto</button>
+          <router-link :to="{name: 'RegistStudents'}" tag="span">
+                <button class="btn btn-primary">Novo Aluno</button>
           </router-link>
         <div class="float-btn plus"><i class="fas fa-plus"></i></div>
       </div>
@@ -12,15 +12,15 @@
     <div class="container">
       <Table
           :cols="cols"
-          :data="products"
-          title="Produtos"
-          :searchMethod="GetProducts"
-          :paginationMethod="GetProducts"
-          :sortMethod="GetProducts"
+          :data="students"
+          title="students"
+          :searchMethod="GetStudents"
+          :paginationMethod="GetStudents"
+          :sortMethod="GetStudents"
           :pagination="pagination"
           :changePage="changePage"
-          resource="products"
-          editRoute="EditProducts"
+          resource="Students"
+          editRoute="EditStudents"
         ></Table>
     </div>
   </div>
@@ -34,14 +34,13 @@ export default {
   },
   data () {
     return {
-      products: [],
+      students: [],
       hadError: '',
       isRequesting: false,
       cols: [
         { name: 'name', label: 'Nome' },
-        { name: 'price', label: 'Preço' },
-        { name: 'quantity', label: 'Quantidade' },
-        { name: 'description', label: 'Descrição' }
+        { name: 'birthday', label: 'Data de Nascimento' },
+        { name: 'class', label: 'Serie de Ingresso' }
       ],
       pagination: {
         perPage: 12,
@@ -58,26 +57,26 @@ export default {
     },
     /*
      *  GetOperators: This method will fire a GET request
-     *  to fetch the products and the will store the result
+     *  to fetch the Students and the will store the result
      *  into the orders local state property
      */
-    async GetProducts () {
+    async GetStudents () {
       this.isRequesting = true
 
       try {
-        const result = await this.axios.get(`/product`)
+        const result = await this.axios.get(`/auth/student`)
         const res = result.data
         this.totalElements = res.items_count
-        this.products = res.data
+        this.students = res.data
       } catch (e) {
         this.hadError =
-          'Não foi possível carregar os Produtos. Actualize a página.'
+          'Não foi possível carregar os Alunos. Actualize a página.'
       }
       this.isRequesting = false
     }
   },
   created () {
-    this.GetProducts()
+    this.GetStudents()
   }
 }
 </script>
