@@ -19,7 +19,7 @@ Vue.use(VeeValidate)
 Validator.localize('pt_PT', pt)
 Vue.use(VueAxios, axios)
 
-axios.defaults.baseURL = `http://localhost/api`
+axios.defaults.baseURL = process.env.VUE_APP_API
 axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 
